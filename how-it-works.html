@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SaLone Market — How It Works</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <div class="nav-logo">SaLone<span>Market</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="browse.html">Browse</a></li>
+      <li><a href="how-it-works.html" class="active">How It Works</a></li>
+      <li><a href="register.html" class="nav-cta">Join Free</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="features.html" onclick="closeMobile()">Features</a>
+    <a href="browse.html" onclick="closeMobile()">Browse</a>
+    <a href="how-it-works.html" onclick="closeMobile()">How It Works</a>
+    <a href="register.html" onclick="closeMobile()">Join Free</a>
+  </div>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="how" style="padding-top: 150px; min-height: 100vh;">
+    <div class="reveal">
+      <p class="section-label">Simple Process</p>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">Get started in minutes — whether you're a buyer or a seller anywhere in Sierra Leone.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-icon">📝</div>
+        <h3>Create Your Account</h3>
+        <p>Register as a buyer or seller with your district and contact details in under 2 minutes.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-icon">📦</div>
+        <div class="step-num">02</div>
+        <h3>List or Browse</h3>
+        <p>Sellers post produce with prices. Buyers browse by category, district, or keyword search.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-icon">🛒</div>
+        <h3>Place Your Order</h3>
+        <p>Add items to your cart, choose delivery or pickup, and confirm with your mobile number.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div class="step-icon">🚚</div>
+        <h3>Receive &amp; Pay</h3>
+        <p>Goods delivered to your door or collected from the seller's location. Pay on delivery or via mobile money.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">SaLone<span>Market</span></div>
+        <p>A Digital Public Good connecting farmers, traders, and buyers across all 14 districts of Sierra Leone — reducing waste, improving livelihoods, and growing the local economy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="browse.html">Browse Products</a></li>
+          <li><a href="register.html">Sell on SaLone</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="features.html">Features</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Centre</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">Report Issue</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Open Source</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SaLone Market. Built for Sierra Leone 🇸🇱</p>
+      <span class="sdg-badge">SDG 1 · SDG 2 · SDG 8 · SDG 17</span>
+    </div>
+  </footer>
+
+  <!-- ===== CART FLOAT BUTTON ===== -->
+  <button class="cart-float" onclick="toggleCart()" aria-label="Open cart">
+    🛒
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2>Your Cart 🛒</h2>
+      <button class="cart-close" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <div class="cart-empty-icon">🛒</div>
+        <p>Your cart is empty.<br>Browse the market and add some goods!</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="cart-total-price" id="cartTotal">NLe 0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Proceed to Checkout →</button>
+    </div>
+  </div>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✅</span>
+    <span id="toastMsg">Item added!</span>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

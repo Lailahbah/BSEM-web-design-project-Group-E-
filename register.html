@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SaLone Market — Join Free</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <div class="nav-logo">SaLone<span>Market</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="browse.html">Browse</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="register.html" class="nav-cta active">Join Free</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="features.html" onclick="closeMobile()">Features</a>
+    <a href="browse.html" onclick="closeMobile()">Browse</a>
+    <a href="how-it-works.html" onclick="closeMobile()">How It Works</a>
+    <a href="register.html" onclick="closeMobile()">Join Free</a>
+  </div>
+
+  <!-- ===== REGISTER FORM ===== -->
+  <section id="register" style="padding-top: 150px; min-height: 100vh;">
+    <div class="form-layout">
+      <div class="form-info reveal">
+        <p class="section-label">Get Started Today</p>
+        <h2 class="section-title">Join SaLone Market</h2>
+        <p class="section-sub">Register as a buyer or seller and connect with thousands of traders across Sierra Leone.</p>
+        <div class="form-benefit">
+          <div class="benefit-icon">✅</div>
+          <div class="benefit-text">
+            <h4>Free to Join</h4>
+            <p>No registration fee — create your account at no cost.</p>
+          </div>
+        </div>
+        <div class="form-benefit">
+          <div class="benefit-icon">🔒</div>
+          <div class="benefit-text">
+            <h4>Secure &amp; Private</h4>
+            <p>Your data stays safe with us. We never share your details.</p>
+          </div>
+        </div>
+        <div class="form-benefit">
+          <div class="benefit-icon">📲</div>
+          <div class="benefit-text">
+            <h4>SMS Confirmation</h4>
+            <p>Get instant order updates by SMS, even on basic phones.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="market-form">
+          <div id="formArea">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name *</label>
+                <input type="text" id="fname" placeholder="e.g. Aminata" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name *</label>
+                <input type="text" id="lname" placeholder="e.g. Kamara" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" placeholder="+232 XX XXX XXXX" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="your@email.com" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="district">District *</label>
+                <select id="district" required>
+                  <option value="">Select district</option>
+                  <option>Western Area (Freetown)</option>
+                  <option>Bo</option>
+                  <option>Kenema</option>
+                  <option>Makeni (Bombali)</option>
+                  <option>Kono</option>
+                  <option>Moyamba</option>
+                  <option>Pujehun</option>
+                  <option>Kailahun</option>
+                  <option>Kambia</option>
+                  <option>Koinadugu</option>
+                  <option>Port Loko</option>
+                  <option>Tonkolili</option>
+                  <option>Bonthe</option>
+                  <option>Falaba</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="role">I want to *</label>
+                <select id="role" required>
+                  <option value="">Select role</option>
+                  <option>Buy Goods</option>
+                  <option>Sell Goods</option>
+                  <option>Both Buy &amp; Sell</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="product">What will you sell? (optional)</label>
+              <textarea id="product" placeholder="e.g. Cassava, groundnuts, smoked fish from Bo district..."></textarea>
+            </div>
+            <button class="form-submit" onclick="handleSubmit()">Create My Account →</button>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <img src="images/11259067813936253.jfif" alt="Welcome Image" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; display: block; border: 4px solid var(--green); box-shadow: 0 8px 24px rgba(26,107,60,0.2);" />
+            <h3>Welcome to SaLone Market!</h3>
+            <p>Your account has been created. Check your phone for an SMS confirmation shortly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">SaLone<span>Market</span></div>
+        <p>A Digital Public Good connecting farmers, traders, and buyers across all 14 districts of Sierra Leone — reducing waste, improving livelihoods, and growing the local economy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="browse.html">Browse Products</a></li>
+          <li><a href="register.html">Sell on SaLone</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="features.html">Features</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Centre</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">Report Issue</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Open Source</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SaLone Market. Built for Sierra Leone 🇸🇱</p>
+      <span class="sdg-badge">SDG 1 · SDG 2 · SDG 8 · SDG 17</span>
+    </div>
+  </footer>
+
+  <!-- ===== CART FLOAT BUTTON ===== -->
+  <button class="cart-float" onclick="toggleCart()" aria-label="Open cart">
+    🛒
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2>Your Cart 🛒</h2>
+      <button class="cart-close" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <div class="cart-empty-icon">🛒</div>
+        <p>Your cart is empty.<br>Browse the market and add some goods!</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="cart-total-price" id="cartTotal">NLe 0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Proceed to Checkout →</button>
+    </div>
+  </div>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✅</span>
+    <span id="toastMsg">Item added!</span>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
